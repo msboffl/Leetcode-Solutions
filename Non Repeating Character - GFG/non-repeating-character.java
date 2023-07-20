@@ -36,18 +36,12 @@ class Solution
     //Function to find the first non-repeating character in a string.
     static char nonrepeatingCharacter(String s)
     {
-        for(int i = 0; i < s.length(); i++) {
-            boolean check = false;
-            for(int j = 0; j < s.length(); j++) {
-                if((i != j) && (s.charAt(i) == s.charAt(j))) {
-                    check = true;
-                    break;
-                }
-            }
-            if(check == false) {
+        int freq [] = new int[26];
+        for(int i = 0; i < s.length(); i++)
+            freq [s.charAt(i) - 'a'] ++;
+        for(int i = 0; i < s.length(); i++)
+            if(freq [s.charAt(i) - 'a'] == 1)
                 return s.charAt(i);
-            }
-        }
         return '$';
         //Your code here
     }
