@@ -1,24 +1,25 @@
 class Solution {
     public String mergeAlternately(String word1, String word2) {
-        int m = word1.length();
-        int n = word2.length();
+        int n1 = word1.length();
+        int n2 = word2.length();
         
-        StringBuilder res = new StringBuilder();
-        
-        int i = 0;
-        int j = 0;
-        
-        while(i < m || j < n) {
-            if(i < m) {
-                res.append(word1.charAt(i));
-                i++;
-            }
-            if(j < n) {
-                res.append(word2.charAt(j));
-                j++;
-            }
+        int i = 0; // word1 --> Pointer
+        int j = 0; // word2 --> Pointer
+        String ans = "";
+        while(i < n1 && j < n2) {
+            ans += word1.charAt(i);
+            ans += word2.charAt(j);
+            i++;
+            j++;
         }
-        
-        return res.toString();
+        while(i < n1) {
+            ans += word1.charAt(i);
+            i++;
+        }
+        while(j < n2) {
+            ans += word2.charAt(j);
+            j++;
+        }
+        return ans;
     }
 }
