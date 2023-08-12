@@ -1,1 +1,1 @@
-​
+[Brute Force](https://leetcode.com/problems/merge-strings-alternately/discuss/3728687/Java-Brute-force-approach)
