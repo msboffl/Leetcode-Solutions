@@ -1,18 +1,18 @@
 class Solution {
     public char findTheDifference(String s, String t) {
-        char[] sortS = s.toCharArray();
-        char[] sortT = t.toCharArray();
+        char[] charArrayS = s.toCharArray();
+        char[] charArrayT = t.toCharArray();
         
-        Arrays.sort(sortS);
-        Arrays.sort(sortT);
+        Arrays.sort(charArrayS);
+        Arrays.sort(charArrayT);
         
-        int i = 0;
+        int i = 0; 
         while(i < s.length()) {
-            if(sortS[i] != sortT[i]) {
-                return sortT[i];
+            if(charArrayS[i] != charArrayT[i]) {
+                return charArrayT[i];
             }
             i++;
         }
-        return sortT[i];
+        return charArrayT[i];
     }
 }
