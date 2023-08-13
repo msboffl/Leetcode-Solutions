@@ -4,18 +4,18 @@ class Solution {
             return false;
         }
         
-        int[] sCounter = new int[26];
-        int[] tCounter = new int[26];
-        
+        int[] table = new int[26];
         for(int i = 0; i < s.length(); i++) {
-            sCounter[s.charAt(i) - 'a']++;
-            tCounter[t.charAt(i) - 'a']++; 
+            table[s.charAt(i) - 'a']++;
         }
-        for(int i = 0; i < 26; i++) {
-            if(sCounter[i] != tCounter[i]) {
+        
+        for(int i = 0; i < t.length(); i++) {
+            table[t.charAt(i) - 'a']--;
+            if(table[t.charAt(i) - 'a'] < 0) {
                 return false;
             }
         }
+        
         return true;
     }
 }
