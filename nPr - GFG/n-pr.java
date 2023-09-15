@@ -25,15 +25,12 @@ class GFG{
 //User function Template for Java
 
 class Solution{
-    static long fact(long n) {
-        if(n == 0) return 1;
-        if(n == 1) return n;
-        long ans = n * fact(n-1);
-        return ans;
-    }
     static long nPr(long n, long r){
-        long ans = fact(n) / fact(n-r);
-        return ans;
+        long res = 1;
+        for(int i = 0; i < r; i++) {
+            res *= n--;
+        }
+        return res;
         // code here
     }
 }
