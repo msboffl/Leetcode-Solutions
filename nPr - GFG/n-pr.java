@@ -28,7 +28,8 @@ class Solution{
     static long nPr(long n, long r){
         long res = 1;
         for(int i = 0; i < r; i++) {
-            res *= n--;
+            res *= n;
+            n--;
         }
         return res;
         // code here
